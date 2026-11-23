@@ -1,276 +1,744 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Systems Architect & EdTech Innovator</title>
-    <style>
-        :root {
-            --bg-color: #0b0713; /* Morado oscuro profundo */
-            --card-bg: #150f26;  /* Morado oscuro para tarjetas */
-            --accent: #a855f7;   /* Morado neón / acento */
-            --accent-glow: rgba(168, 85, 247, 0.25);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --border-color: #2b1f47;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laura Chasampi | Systems, Web &amp; EdTech</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2328022f'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23af8b4a' stroke-width='3'/%3E%3Ctext x='32' y='39' text-anchor='middle' fill='%23ffffff' font-family='Arial,sans-serif' font-size='22' font-weight='700'%3ELC%3C/text%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg-main: #28022f;
+      --bg-surface: #360640;
+      --bg-card: #1d0122;
+      --gold: #af8b4a;
+      --gold-soft: rgba(175, 139, 74, 0.22);
+      --text-main: #ffffff;
+      --text-muted: #e2d4e8;
+      --border: rgba(175, 139, 74, 0.35);
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.6;
+    }
 
-        header {
-            padding: 3rem 0;
-            border-bottom: 1px solid var(--border-color);
-            margin-bottom: 3rem;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .tag {
-            display: inline-block;
-            background-color: var(--accent-glow);
-            color: var(--accent);
-            padding: 0.35rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            border: 1px solid var(--accent);
-        }
+    .container {
+      width: min(1080px, 92%);
+      margin: 0 auto;
+    }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.025em;
-        }
+    /* Header & Language Switcher */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(40, 2, 47, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
 
-        .subtitle {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 700px;
-            margin-bottom: 1.5rem;
-        }
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.9rem 0;
+    }
 
-        .languages {
-            font-size: 0.95rem;
-            color: var(--accent);
-            font-weight: 500;
-        }
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      color: var(--text-main);
+    }
 
-        section {
-            margin-bottom: 3rem;
-        }
+    .brand span {
+      color: var(--gold);
+    }
 
-        h2 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+    .nav-right {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
 
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .nav-links a:hover {
+      color: var(--gold);
+    }
 
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent);
-        }
+    .lang-group {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px;
+      background: var(--bg-card);
+    }
 
-        .card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-main);
-        }
+    .lang-btn {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
 
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 1.25rem;
-        }
+    .lang-btn.active {
+      background: var(--gold);
+      color: #18011c;
+    }
 
-        .card a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
+    /* Hero */
+    .hero {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-        .card a:hover {
-            text-decoration: underline;
-        }
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
 
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+    h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      max-width: 22ch;
+    }
 
-        .skill-tag {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+    .hero-lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 66ch;
+      margin-bottom: 2rem;
+    }
 
-        .contact-box {
-            background: linear-gradient(135deg, var(--card-bg), #1e133a);
-            border: 1px solid var(--accent);
-            border-radius: 16px;
-            padding: 2.5rem;
-            text-align: center;
-        }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
 
-        .contact-box h2 {
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.4rem;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.15s, background 0.2s, border-color 0.2s;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #fff;
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 1rem;
-            transition: opacity 0.2s;
-        }
+    .btn:hover {
+      transform: translateY(-1px);
+    }
 
-        .btn:hover {
-            opacity: 0.9;
-        }
+    .btn-primary {
+      background: var(--gold);
+      color: #18011c;
+    }
 
-        footer {
-            text-align: center;
-            padding-top: 2rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-        }
-    </style>
+    .btn-secondary {
+      border: 1px solid var(--gold);
+      color: var(--text-main);
+      background: var(--bg-soft);
+    }
+
+    /* Sections */
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-tag {
+      color: var(--gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-sub {
+      color: var(--text-muted);
+      max-width: 68ch;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--text-main);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+      padding-top: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--gold);
+      background: var(--bg-surface);
+    }
+
+    /* Plain-language glossary box for small businesses */
+    .glossary-box {
+      margin-top: 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--gold);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .glossary-box h3 {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+
+    .glossary-item {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(175, 139, 74, 0.2);
+      font-size: 0.93rem;
+      color: var(--text-muted);
+    }
+
+    .glossary-item:last-child {
+      border-bottom: none;
+    }
+
+    .glossary-item strong {
+      color: var(--text-main);
+    }
+
+    .text-link {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin-top: auto;
+      display: inline-block;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Contact CTA */
+    .cta-box {
+      background: linear-gradient(145deg, var(--bg-surface), var(--bg-card));
+      border: 1px solid var(--gold);
+      border-radius: 16px;
+      padding: 2.2rem;
+      text-align: center;
+    }
+
+    .cta-box p {
+      color: var(--text-muted);
+      max-width: 58ch;
+      margin: 0.75rem auto 1.5rem;
+    }
+
+    .email-highlight {
+      display: inline-block;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      word-break: break-all;
+    }
+
+    footer {
+      padding: 1.8rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <!-- HEADER -->
-        <header>
-            <div class="tag">Available for Remote Freelance (20-30 hrs/wk)</div>
-            <h1>Full-Stack Systems Architect & EdTech Innovator</h1>
-            <p class="subtitle">Building scalable digital tools, automated workflows, and multilingual learning environments for mission-driven organizations and global teams.</p>
-            <p class="languages">🇺🇸 English · 🇪🇸 Spanish · 🇧🇷 Portuguese (Fluent) | 🇨🇳 Mandarin (Basic / HSK 1-2) · 🇮🇹 Italian (Basic)</p>
-        </header>
-
-        <!-- CORE COMPETENCIES -->
-        <section>
-            <h2>⚙️ Core Competencies</h2>
-            <div class="skills-list">
-                <span class="skill-tag">Full-Stack Architecture</span>
-                <span class="skill-tag">JavaScript / HTML / CSS</span>
-                <span class="skill-tag">Google Apps Script & AppSheet</span>
-                <span class="skill-tag">REST APIs & Workflow Automation</span>
-                <span class="skill-tag">Firebase & Real-time Sync</span>
-                <span class="skill-tag">Linux / Termux Environments</span>
-                <span class="skill-tag">Instructional & UX Design</span>
-                <span class="skill-tag">NGO Operations Management</span>
-            </div>
-        </section>
-
-        <!-- FEATURED PROJECTS -->
-        <section>
-            <h2>🚀 Featured Work & Systems</h2>
-            <div class="grid">
-                <!-- Project 1 -->
-                <div class="card">
-                    <div>
-                        <h3>Fushi — Mandarin Speaking Trainer</h3>
-                        <p>Interactive web application engineered to practice Mandarin speaking and HSK 1–2 vocabulary cleanly and intuitively.</p>
-                    </div>
-                    <a href="https://youfirstidiomas1-hue.github.io/fushi/" target="_blank">View Live App &rarr;</a>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="card">
-                    <div>
-                        <h3>Real-Time Virtual Classroom</h3>
-                        <p>Synchronized teaching environment combining Whereby, Firebase real-time database, and custom Pinyin-to-Hanzi tools.</p>
-                    </div>
-                    <span style="color: var(--text-muted); font-size: 0.85rem;">Case Study Available</span>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="card">
-                    <div>
-                        <h3>NGO Operations & Donor Ecosystem</h3>
-                        <p>Custom internal/external systems built with Google Apps Script & AppSheet to streamline workflows and donor acquisition.</p>
-                    </div>
-                    <span style="color: var(--text-muted); font-size: 0.85rem;">Internal Architecture Case Study</span>
-                </div>
-
-               <!-- Project 4 -->
-                <div class="card">
-                    <div>
-                        <h3>Phonetics & Pronunciation Suite</h3>
-                        <p>Specialized interactive tools designed for practicing regular verb variations and English minimal pairs, combining phonetics with targeted linguistic workflows.</p>
-                    </div>
-                    <span style="color: var(--accent); font-size: 0.85rem; font-weight: 500;">EdTech Methodology & Tooling</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section>
-            <div class="contact-box">
-                <h2>Let's Build Something Meaningful</h2>
-                <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 1.5rem auto;">
-                    Looking for a multidisciplinary systems thinker to bridge technology, communication, and education? Let's talk.
-                </p>
-                <a href="mailto:lau_chasampi@yahoo.com.ar" class="btn">Get in Touch</a>
-            </div>
-        </section>
-
-        <!-- FOOTER -->
-        <footer>
-            <p>&copy; 2026 · Systems & Education Portfolio</p>
-        </footer>
+  <header>
+    <div class="container nav-bar">
+      <a href="#" class="brand">Laura Chasampi<span>.</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#businesses" data-i18n="nav_biz">Negocios y Pymes</a>
+          <a href="#hiring" data-i18n="nav_hire">Empresas y Roles</a>
+          <a href="#projects" data-i18n="nav_proj">Proyectos</a>
+          <a href="#contact" data-i18n="nav_contact">Contacto</a>
+        </nav>
+        <div class="lang-group" role="group" aria-label="Language selector">
+          <button type="button" class="lang-btn" data-lang="es">ES</button>
+          <button type="button" class="lang-btn" data-lang="pt">PT</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
     </div>
+  </header>
 
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow" data-i18n="hero_eyebrow">Sistemas · Web · EdTech · Idiomas</span>
+        <h1 data-i18n="hero_title">Tecnología con sentido humano y orden real.</h1>
+        <p class="hero-lead" data-i18n="hero_lead">
+          Diseño sitios web, aplicaciones a medida y sistemas de organización tanto para emprendedores y pequeñas empresas que necesitan resolver su día a día como para equipos y organizaciones que buscan arquitectura técnica, automatización y herramientas educativas.
+        </p>
+        <div class="hero-actions">
+          <a href="#businesses" class="btn btn-primary" data-i18n="cta_biz">Busco app o web para mi negocio</a>
+          <a href="#hiring" class="btn btn-secondary" data-i18n="cta_hire">Busco perfil técnico / rol remoto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATH 1: SMALL BUSINESSES / ENTREPRENEURS (PLAIN LANGUAGE) -->
+    <section id="businesses">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="biz_tag">Para emprendedores y pequeñas / medianas empresas</span>
+          <h2 data-i18n="biz_title">Tu negocio ordenado y visible, sin enredos técnicos</h2>
+          <p class="section-sub" data-i18n="biz_sub">
+            Si estás arrancando o sientes que tu gestión diaria se escapa entre mensajes, planillas sueltas y tareas repetitivas, no necesitas saber de programación. Yo escucho cómo trabaja tu equipo, armo lo que de verdad te sirve y te acompaño con trato cercano, excelencia y precio justo.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3 data-i18n="biz_c1_title">Sitio web para mostrar tu trabajo afuera</h3>
+            <p data-i18n="biz_c1_desc">
+              Una página clara, rápida y adaptable a celulares para que tus clientes entiendan qué haces, confíen en tu proyecto y te contacten sin vueltas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="biz_c2_title">Herramientas internas para ordenar tu rutina</h3>
+            <p data-i18n="biz_c2_desc">
+              Espacios simples y a medida para organizar clientes, turnos, pedidos, voluntarios o registros sin depender de hojas de cálculo desordenadas.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="biz_c3_title">Menos tareas manuales y repetitivas</h3>
+            <p data-i18n="biz_c3_desc">
+              Conectamos tareas cotidianas para ahorrar tiempo y evitar errores humanos, cuidando siempre a las personas que usan la herramienta.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="biz_c4_title">Foco humano, calidad y precio justo</h3>
+            <p data-i18n="biz_c4_desc">
+              Sin palabras difíciles ni presupuestos inflados de gran agencia: pagas por soluciones pensadas para el tamaño y las necesidades reales de tu proyecto.
+            </p>
+          </article>
+        </div>
+
+        <div class="glossary-box">
+          <h3 data-i18n="gloss_title">Palabras sin misterio (por si ves estos términos por ahí)</h3>
+          <div class="glossary-item" data-i18n="gloss_1">
+            <strong>Sitio web / App a medida:</strong> Una página o aplicación hecha según cómo trabaja tu negocio, no una plantilla rígida que te obliga a cambiar tu forma de atender.
+          </div>
+          <div class="glossary-item" data-i18n="gloss_2">
+            <strong>Sistema interno:</strong> El "detrás de escena" de tu empresa: dónde se guarda y ordena la información de clientes, turnos, equipo o seguimiento sin perder datos.
+          </div>
+          <div class="glossary-item" data-i18n="gloss_3">
+            <strong>Automatización:</strong> Hacer que tareas repetitivas (como registrar datos, organizar listas o enviar avisos) pasen solas de forma ordenada y confiable.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATH 2: HIRING / RECRUITERS / ORGANIZATIONS -->
+    <section id="hiring">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="hire_tag">Para empresas, startups, EdTech y ONGs</span>
+          <h2 data-i18n="hire_title">Arquitectura de sistemas, automatización y diseño educativo</h2>
+          <p class="section-sub" data-i18n="hire_sub">
+            Disponible para colaboraciones remotas flexibles (20–30 hrs/semana) o proyectos por contrato donde combino desarrollo web, flujos automatizados, sensibilidad humana y fluidez multilingüe (ES / PT / EN, más mandarín e italiano básicos).
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3 data-i18n="hire_c1_title">Sistemas y Automatización</h3>
+            <p data-i18n="hire_c1_desc">
+              Diseño e implementación de sistemas internos y externos, gestión de alumnos y flujos operativos con enfoque en claridad y confiabilidad.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Google Apps Script</span>
+              <span class="pill">AppSheet</span>
+              <span class="pill">Firebase</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="hire_c2_title">Desarrollo Web y EdTech</h3>
+            <p data-i18n="hire_c2_desc">
+              Creación de interfaces interactivas, plataformas educativas y entrenadores prácticos orientados a la adquisición real de idiomas.
+            </p>
+            <div class="pill-row">
+              <span class="pill">JavaScript</span>
+              <span class="pill">HTML / CSS</span>
+              <span class="pill">Learning Tools</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="hire_c3_title">Tercer Sector e Idiomas</h3>
+            <p data-i18n="hire_c3_desc">
+              Sistemas humanos para ONGs (donantes, voluntarios, capacitaciones y consultantes) y evaluación lingüística o flujos multilingües.
+            </p>
+            <div class="pill-row">
+              <span class="pill">ES · PT · EN</span>
+              <span class="pill">Mandarin / IT</span>
+              <span class="pill">Human-Centric</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" data-i18n="proj_tag">Muestras reales</span>
+          <h2 data-i18n="proj_title">Proyectos y herramientas construidas</h2>
+          <p class="section-sub" data-i18n="proj_sub">
+            Ejemplos prácticos de cómo convierto necesidades concretas en herramientas funcionales.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Fushi</h3>
+            <p data-i18n="p1_desc">
+              Aplicación web interactiva para práctica oral y vocabulario de mandarín (HSK 1 y HSK 2).
+            </p>
+            <a class="text-link" href="https://youfirstidiomas1-hue.github.io/fushi/" target="_blank" rel="noopener noreferrer" data-i18n="open_proj">Abrir proyecto →</a>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p2_title">Gestión de Alumnos y Clases</h3>
+            <p data-i18n="p2_desc">
+              Sitio web, sistema de gestión estudiantil y widgets interactivos de práctica (como Present Continuous y pronunciación/minimal pairs).
+            </p>
+            <a class="text-link" href="https://github.com/youfirstidiomas1-hue" target="_blank" rel="noopener noreferrer" data-i18n="view_gh">Ver en GitHub →</a>
+          </article>
+
+          <article class="card">
+            <h3 data-i18n="p3_title">Sistemas para ONGs y Pymes</h3>
+            <p data-i18n="p3_desc">
+              Arquitectura de herramientas para donantes, capacitación de voluntarios, atención a consultantes y orden operativo cotidiano.
+            </p>
+            <a class="text-link" href="#contact" data-i18n="ask_quote">Consultar por correo →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <span class="section-tag" data-i18n="ct_tag">Contacto directo</span>
+          <h2 data-i18n="ct_title">Pide tu presupuesto o conversamos sobre tu proyecto</h2>
+          <p data-i18n="ct_desc">
+            Cuéntame qué necesita tu negocio, tu equipo o tu organización. Respondo personalmente y armamos una propuesta clara y a medida.
+          </p>
+          <a href="mailto:lau_chasampi@yahoo.com.ar" class="email-highlight">lau_chasampi@yahoo.com.ar</a>
+          <div>
+            <a href="mailto:lau_chasampi@yahoo.com.ar?subject=Consulta%20%2F%20Presupuesto" class="btn btn-primary" data-i18n="ct_btn">Enviar correo para presupuesto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p data-i18n="footer_txt">Laura Chasampi · Portafolio y Soluciones Digitales · lau_chasampi@yahoo.com.ar</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      es: {
+        page_title: "Laura Chasampi | Sistemas, Web y EdTech",
+        nav_biz: "Negocios y Pymes",
+        nav_hire: "Empresas y Roles",
+        nav_proj: "Proyectos",
+        nav_contact: "Contacto",
+        hero_eyebrow: "Sistemas · Web · EdTech · Idiomas",
+        hero_title: "Tecnología con sentido humano y orden real.",
+        hero_lead: "Diseño sitios web, aplicaciones a medida y sistemas de organización tanto para emprendedores y pequeñas empresas que necesitan resolver su día a día como para equipos y organizaciones que buscan arquitectura técnica, automatización y herramientas educativas.",
+        cta_biz: "Busco app o web para mi negocio",
+        cta_hire: "Busco perfil técnico / rol remoto",
+        biz_tag: "Para emprendedores y pequeñas / medianas empresas",
+        biz_title: "Tu negocio ordenado y visible, sin enredos técnicos",
+        biz_sub: "Si estás arrancando o sientes que tu gestión diaria se escapa entre mensajes, planillas sueltas y tareas repetitivas, no necesitas saber de programación. Yo escucho cómo trabaja tu equipo, armo lo que de verdad te sirve y te acompaño con trato cercano, excelencia y precio justo.",
+        biz_c1_title: "Sitio web para mostrar tu trabajo afuera",
+        biz_c1_desc: "Una página clara, rápida y adaptable a celulares para que tus clientes entiendan qué haces, confíen en tu proyecto y te contacten sin vueltas.",
+        biz_c2_title: "Herramientas internas para ordenar tu rutina",
+        biz_c2_desc: "Espacios simples y a medida para organizar clientes, turnos, pedidos, voluntarios o registros sin depender de hojas de cálculo desordenadas.",
+        biz_c3_title: "Menos tareas manuales y repetitivas",
+        biz_c3_desc: "Conectamos tareas cotidianas para ahorrar tiempo y evitar errores humanos, cuidando siempre a las personas que usan la herramienta.",
+        biz_c4_title: "Foco humano, calidad y precio justo",
+        biz_c4_desc: "Sin palabras difíciles ni presupuestos inflados de gran agencia: pagas por soluciones pensadas para el tamaño y las necesidades reales de tu proyecto.",
+        gloss_title: "Palabras sin misterio (por si ves estos términos por ahí)",
+        gloss_1: "<strong>Sitio web / App a medida:</strong> Una página o aplicación hecha según cómo trabaja tu negocio, no una plantilla rígida que te obliga a cambiar tu forma de atender.",
+        gloss_2: "<strong>Sistema interno:</strong> El \"detrás de escena\" de tu empresa: dónde se guarda y ordena la información de clientes, turnos, equipo o seguimiento sin perder datos.",
+        gloss_3: "<strong>Automatización:</strong> Hacer que tareas repetitivas (como registrar datos, organizar listas o enviar avisos) pasen solas de forma ordenada y confiable.",
+        hire_tag: "Para empresas, startups, EdTech y ONGs",
+        hire_title: "Arquitectura de sistemas, automatización y diseño educativo",
+        hire_sub: "Disponible para colaboraciones remotas flexibles (20–30 hrs/semana) o proyectos por contrato donde combino desarrollo web, flujos automatizados, sensibilidad humana y fluidez multilingüe (ES / PT / EN, más mandarín e italiano básicos).",
+        hire_c1_title: "Sistemas y Automatización",
+        hire_c1_desc: "Diseño e implementación de sistemas internos y externos, gestión de alumnos y flujos operativos con enfoque en claridad y confiabilidad.",
+        hire_c2_title: "Desarrollo Web y EdTech",
+        hire_c2_desc: "Creación de interfaces interactivas, plataformas educativas y entrenadores prácticos orientados a la adquisición real de idiomas.",
+        hire_c3_title: "Tercer Sector e Idiomas",
+        hire_c3_desc: "Sistemas humanos para ONGs (donantes, voluntarios, capacitaciones y consultantes) y evaluación lingüística o flujos multilingües.",
+        proj_tag: "Muestras reales",
+        proj_title: "Proyectos y herramientas construidas",
+        proj_sub: "Ejemplos prácticos de cómo convierto necesidades concretas en herramientas funcionales.",
+        p1_desc: "Aplicación web interactiva para práctica oral y vocabulario de mandarín (HSK 1 y HSK 2).",
+        open_proj: "Abrir proyecto →",
+        p2_title: "Gestión de Alumnos y Clases",
+        p2_desc: "Sitio web, sistema de gestión estudiantil y widgets interactivos de práctica (como Present Continuous y pronunciación/minimal pairs).",
+        view_gh: "Ver en GitHub →",
+        p3_title: "Sistemas para ONGs y Pymes",
+        p3_desc: "Arquitectura de herramientas para donantes, capacitación de voluntarios, atención a consultantes y orden operativo cotidiano.",
+        ask_quote: "Consultar por correo →",
+        ct_tag: "Contacto directo",
+        ct_title: "Pide tu presupuesto o conversamos sobre tu proyecto",
+        ct_desc: "Cuéntame qué necesita tu negocio, tu equipo o tu organización. Respondo personalmente y armamos una propuesta clara y a medida.",
+        ct_btn: "Enviar correo para presupuesto",
+        footer_txt: "Laura Chasampi · Portafolio y Soluciones Digitales · lau_chasampi@yahoo.com.ar"
+      },
+      pt: {
+        page_title: "Laura Chasampi | Sistemas, Web e EdTech",
+        nav_biz: "Negócios e PMEs",
+        nav_hire: "Empresas e Vagas",
+        nav_proj: "Projetos",
+        nav_contact: "Contato",
+        hero_eyebrow: "Sistemas · Web · EdTech · Idiomas",
+        hero_title: "Tecnologia com foco humano e organização de verdade.",
+        hero_lead: "Crio sites, aplicativos sob medida e sistemas de organização tanto para empreendedores e pequenas empresas que precisam resolver o dia a dia quanto para equipes e organizações que buscam arquitetura de sistemas, automação e ferramentas educativas.",
+        cta_biz: "Quero app ou site para meu negócio",
+        cta_hire: "Busco perfil técnico / vaga remota",
+        biz_tag: "Para empreendedores e pequenas / médias empresas",
+        biz_title: "Seu negócio organizado e visível, sem complicação técnica",
+        biz_sub: "Se você está começando ou sente que a gestão diária está se perdendo entre mensagens, planilhas soltas e tarefas repetitivas, não precisa saber programar. Eu ouço como a sua equipe trabalha, construo o que faz sentido e entrego excelência com preço justo.",
+        biz_c1_title: "Site para apresentar o seu trabalho lá fora",
+        biz_c1_desc: "Uma página clara, rápida e adaptada ao celular para que seus clientes entendam o que você faz, confiem na marca e entrem em contato facilmente.",
+        biz_c2_title: "Ferramentas internas para organizar a rotina",
+        biz_c2_desc: "Soluções simples e sob medida para organizar clientes, agendamentos, pedidos, voluntários ou registros sem depender de planilhas bagunçadas.",
+        biz_c3_title: "Menos tarefas manuais e repetitivas",
+        biz_c3_desc: "Conectamos rotinas do dia a dia para economizar tempo e reduzir erros, sempre respeitando as pessoas que usam o sistema.",
+        biz_c4_title: "Foco humano, qualidade e preço justo",
+        biz_c4_desc: "Sem jargões difíceis nem valores inflados de grande agência: você investe em soluções pensadas para a realidade do seu negócio.",
+        gloss_title: "Termos sem mistério (caso apareçam por aí)",
+        gloss_1: "<strong>Site / App sob medida:</strong> Uma página ou aplicativo feito para o jeito real do seu negócio funcionar, e não um modelo engessado que força você a se adaptar.",
+        gloss_2: "<strong>Sistema interno:</strong> Os bastidores da sua empresa: onde clientes, horários, equipe ou atendimentos ficam organizados sem perder informações.",
+        gloss_3: "<strong>Automação:</strong> Fazer com que tarefas repetitivas (como registrar dados, organizar listas ou enviar avisos) aconteçam de forma automática e confiável.",
+        hire_tag: "Para empresas, startups, EdTech e ONGs",
+        hire_title: "Arquitetura de sistemas, automação e design educacional",
+        hire_sub: "Disponível para colaborações remotas flexíveis (20–30h/semana) ou projetos por contrato unindo desenvolvimento web, automação de fluxos, sensibilidade humana e fluência multilíngue (PT / ES / EN, além de mandarim e italiano básicos).",
+        hire_c1_title: "Sistemas e Automação",
+        hire_c1_desc: "Desenho e implementação de sistemas internos e externos, gestão de alunos e fluxos operacionais com foco em clareza e confiabilidade.",
+        hire_c2_title: "Desenvolvimento Web e EdTech",
+        hire_c2_desc: "Criação de interfaces interativas, plataformas educacionais e ferramentas práticas voltadas à aquisição real de idiomas.",
+        hire_c3_title: "Terceiro Setor e Idiomas",
+        hire_c3_desc: "Sistemas humanos para ONGs (doadores, voluntários, capacitações e consulentes) e avaliação linguística ou fluxos multilíngues.",
+        proj_tag: "Exemplos reais",
+        proj_title: "Projetos e ferramentas criadas",
+        proj_sub: "Exemplos práticos de como transformo necessidades reais em ferramentas funcionais.",
+        p1_desc: "Aplicação web interativa para prática oral e vocabulário de mandarim (HSK 1 e HSK 2).",
+        open_proj: "Abrir projeto →",
+        p2_title: "Gestão de Alunos e Aulas",
+        p2_desc: "Site, sistema de gestão de alunos e widgets interativos de prática (como Present Continuous e pronúncia/minimal pairs).",
+        view_gh: "Ver no GitHub →",
+        p3_title: "Sistemas para ONGs e PMEs",
+        p3_desc: "Arquitetura de ferramentas para doadores, capacitação de voluntários, atendimento a consulentes e organização operacional.",
+        ask_quote: "Pedir orçamento por e-mail →",
+        ct_tag: "Contato direto",
+        ct_title: "Peça seu orçamento ou vamos conversar sobre o seu projeto",
+        ct_desc: "Conte o que o seu negócio, equipe ou organização precisa. Respondo pessoalmente e montamos uma proposta clara e sob medida.",
+        ct_btn: "Enviar e-mail para orçamento",
+        footer_txt: "Laura Chasampi · Portfólio e Soluções Digitais · lau_chasampi@yahoo.com.ar"
+      },
+      en: {
+        page_title: "Laura Chasampi | Systems, Web & EdTech",
+        nav_biz: "Small Businesses",
+        nav_hire: "Hiring & Roles",
+        nav_proj: "Projects",
+        nav_contact: "Contact",
+        hero_eyebrow: "Systems · Web · EdTech · Languages",
+        hero_title: "Human-centered technology and real operational clarity.",
+        hero_lead: "I design websites, custom apps, and organizational systems both for founders and small businesses solving day-to-day operations and for teams or organizations seeking systems architecture, workflow automation, and learning tools.",
+        cta_biz: "I need an app or site for my business",
+        cta_hire: "Looking for technical / remote role",
+        biz_tag: "For founders and small / medium businesses",
+        biz_title: "Your business organized and visible, without tech headaches",
+        biz_sub: "If you are just starting out or feel daily operations slipping across chats, scattered spreadsheets, and repetitive tasks, you don't need technical jargon. I listen to how your team works, build what actually helps, and deliver strong results at a fair price.",
+        biz_c1_title: "A clear website to showcase your work",
+        biz_c1_desc: "A fast, mobile-friendly site that helps customers understand what you do, trust your work, and reach out easily.",
+        biz_c2_title: "Internal tools to organize daily routines",
+        biz_c2_desc: "Simple, custom spaces to manage clients, bookings, orders, volunteers, or records without messy spreadsheets.",
+        biz_c3_title: "Fewer repetitive manual tasks",
+        biz_c3_desc: "We connect everyday steps to save time and cut avoidable mistakes while keeping real people at the center.",
+        biz_c4_title: "Human focus, quality, and fair pricing",
+        biz_c4_desc: "No confusing buzzwords or bloated agency markups—just practical tools sized to what your business genuinely needs.",
+        gloss_title: "Plain-English terms (in case you run into them)",
+        gloss_1: "<strong>Custom website / app:</strong> A page or app built around how your business actually runs, rather than a rigid template forcing you to change your workflow.",
+        gloss_2: "<strong>Internal system:</strong> Behind-the-scenes organization for your business—where client info, schedules, team tasks, or follow-ups stay structured without getting lost.",
+        gloss_3: "<strong>Automation:</strong> Having repetitive steps (like logging data, sorting lists, or sending updates) run smoothly and reliably on their own.",
+        hire_tag: "For companies, startups, EdTech & NGOs",
+        hire_title: "Systems architecture, workflow automation & learning design",
+        hire_sub: "Available for flexible remote engagements (20–30 hrs/week) or contract projects combining web development, workflow automation, human sensitivity, and multilingual fluency (EN / ES / PT, plus basic Mandarin and Italian).",
+        hire_c1_title: "Systems & Automation",
+        hire_c1_desc: "Designing and building internal and external systems, student management workflows, and operational tools focused on clarity and reliability.",
+        hire_c2_title: "Web Development & EdTech",
+        hire_c2_desc: "Building interactive web interfaces, educational tools, and practical trainers designed for real language acquisition.",
+        hire_c3_title: "Non-Profits & Languages",
+        hire_c3_desc: "Human-centered systems for NGOs (donors, volunteers, trainings, and beneficiaries/consultants) plus multilingual workflows and evaluation.",
+        proj_tag: "Selected work",
+        proj_title: "Projects & built tools",
+        proj_sub: "Practical examples of turning real needs into working software.",
+        p1_desc: "Interactive web app for speaking practice and Mandarin Chinese vocabulary (HSK 1 and HSK 2).",
+        open_proj: "Open project →",
+        p2_title: "Student & Class Management",
+        p2_desc: "Website, student management system, and interactive practice widgets (such as Present Continuous and pronunciation/minimal pairs).",
+        view_gh: "View on GitHub →",
+        p3_title: "NGO & Small Business Systems",
+        p3_desc: "System architecture for donors, volunteer training, beneficiary/consultant support, and everyday operational structure.",
+        ask_quote: "Request quote by email →",
+        ct_tag: "Direct contact",
+        ct_title: "Request a quote or talk about your project",
+        ct_desc: "Tell me what your business, team, or organization needs. I reply personally and put together a clear, tailored proposal.",
+        ct_btn: "Email for a quote",
+        footer_txt: "Laura Chasampi · Portfolio & Digital Solutions · lau_chasampi@yahoo.com.ar"
+      }
+    };
+
+    function detectInitialLang() {
+      const saved = localStorage.getItem("portfolio_lang");
+      if (saved && translations[saved]) return saved;
+
+      const browserLangs = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || "es"];
+
+      for (const code of browserLangs) {
+        const base = code.toLowerCase().split("-")[0];
+        if (base === "pt") return "pt";
+        if (base === "en") return "en";
+        if (base === "es") return "es";
+      }
+      return "es";
+    }
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.es;
+      document.documentElement.lang = lang;
+      document.title = dict.page_title;
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key] !== undefined) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem("portfolio_lang", lang);
+    }
+
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+    });
+
+    applyLanguage(detectInitialLang());
+  </script>
 </body>
 </html>
