@@ -75,25 +75,6 @@
       color: var(--pink);
     }
 
-    .nav-right {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.92rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--pink-light);
-    }
-
     .lang-group {
       display: inline-flex;
       border: 1px solid var(--border);
@@ -164,6 +145,12 @@
       font-weight: 600;
       font-size: 0.95rem;
       transition: transform 0.15s, background 0.2s, border-color 0.2s;
+    }
+
+    .btn-sm {
+      padding: 0.6rem 0.95rem;
+      font-size: 0.85rem;
+      border-radius: 8px;
     }
 
     .btn:hover {
@@ -295,6 +282,79 @@
       color: var(--text-main);
     }
 
+    /* Website examples inside projects section */
+    .site-examples {
+      margin-top: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+
+    .site-examples h3 {
+      color: var(--pink-light);
+      font-size: 1.15rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .site-examples-sub {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .example-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .example-box {
+      background: var(--bg-surface);
+      border: 1px solid rgba(255, 92, 168, 0.28);
+      border-radius: 12px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .example-box p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Mindmap preview inside NGO systems card */
+    .mindmap-box {
+      background: var(--bg-surface);
+      border: 1px dashed var(--pink-light);
+      border-radius: 10px;
+      padding: 0.85rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+    }
+
+    .mindmap-root {
+      font-weight: 700;
+      color: var(--pink-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .mindmap-branches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .mindmap-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-main);
+    }
+
     .text-link {
       color: var(--pink-light);
       font-weight: 600;
@@ -331,6 +391,13 @@
       word-break: break-all;
     }
 
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+
     footer {
       padding: 1.8rem 0;
       text-align: center;
@@ -343,19 +410,10 @@
   <header>
     <div class="container nav-bar">
       <a href="#" class="brand">Laura Chasampi<span>.</span></a>
-      <div class="nav-right">
-        <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#businesses" data-i18n="nav_biz">Negocios y Pymes</a>
-          <a href="#hiring" data-i18n="nav_hire">Empresas y Roles</a>
-          <a href="#websites" data-i18n="nav_web">Sitios Web</a>
-          <a href="#projects" data-i18n="nav_proj">Proyectos</a>
-          <a href="#contact" data-i18n="nav_contact">Contacto</a>
-        </nav>
-        <div class="lang-group" role="group" aria-label="Language selector">
-          <button type="button" class="lang-btn" data-lang="es">ES</button>
-          <button type="button" class="lang-btn" data-lang="pt">PT</button>
-          <button type="button" class="lang-btn" data-lang="en">EN</button>
-        </div>
+      <div class="lang-group" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
       </div>
     </div>
   </header>
@@ -383,7 +441,7 @@
           <span class="section-tag" data-i18n="biz_tag">Para emprendedores y pequeñas / medianas empresas</span>
           <h2 data-i18n="biz_title">Tu negocio ordenado y visible, sin enredos técnicos</h2>
           <p class="section-sub" data-i18n="biz_sub">
-            Si estás arrancando o sientes que tu gestión diaria se escapa entre mensajes, planillas sueltas y tareas repetitivas, no necesitas saber de programación. Yo escucho cómo trabaja tu equipo, armo lo que de verdad te sirve y te acompaño con trato cercano, excelencia y precio justo.
+            Si estás arrancando o sientes que tu gestión diaria se escapa entre mensajes, planillas sueltas y tareas repetitivas, tengo la solución. Yo escucho cómo trabaja tu equipo, armo lo que de verdad te sirve y te acompaño con trato cercano, excelencia y precio justo.
           </p>
         </div>
 
@@ -487,43 +545,12 @@
       </div>
     </section>
 
-    <!-- WEBSITES -->
-    <section id="websites">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag" data-i18n="web_tag">Presencia digital</span>
-          <h2 data-i18n="web_title">Sitios web que he creado</h2>
-          <p class="section-sub" data-i18n="web_sub">
-            Sitios publicados diseñados y construidos para proyectos reales.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card">
-            <h3>You First Idiomas</h3>
-            <p data-i18n="w1_desc">
-              Sitio web de mi espacio de enseñanza y coaching de idiomas con metodología propia y recursos pensados para el aprendizaje práctico.
-            </p>
-            <a class="text-link" href="https://youfirstidiomas.com" target="_blank" rel="noopener noreferrer" data-i18n="visit_site">Visitar sitio web →</a>
-          </article>
-
-          <article class="card">
-            <h3>Hamdy</h3>
-            <p data-i18n="w2_desc">
-              Sitio web desarrollado para iniciativa comunitaria y de apoyo mutuo en línea.
-            </p>
-            <a class="text-link" href="https://mutualaid-cloud.github.io/hamdy/" target="_blank" rel="noopener noreferrer" data-i18n="visit_site">Visitar sitio web →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
+    <!-- WEBSITES & PROJECTS -->
     <section id="projects">
       <div class="container">
         <div class="section-header">
           <span class="section-tag" data-i18n="proj_tag">Muestras reales</span>
-          <h2 data-i18n="proj_title">Proyectos y herramientas construidas</h2>
+          <h2 data-i18n="proj_title">Sitios web, herramientas y estructuras</h2>
           <p class="section-sub" data-i18n="proj_sub">
             Ejemplos prácticos de cómo convierto necesidades concretas en herramientas funcionales.
           </p>
@@ -547,12 +574,51 @@
           </article>
 
           <article class="card">
-            <h3 data-i18n="p3_title">Sistemas para ONGs y Pymes</h3>
+            <h3 data-i18n="p3_title">Estructuras para ONGs</h3>
             <p data-i18n="p3_desc">
-              Arquitectura de herramientas para donantes, capacitación de voluntarios, atención a consultantes y orden operativo cotidiano.
+              Arquitectura de sistemas con sensibilidad humana para organizar procesos sin exponer datos sensibles.
             </p>
+            <div class="mindmap-box">
+              <div class="mindmap-root" data-i18n="mm_root">Mapa de estructura (ejemplo)</div>
+              <div class="mindmap-branches">
+                <span class="mindmap-node" data-i18n="mm_1">Donantes</span>
+                <span class="mindmap-node" data-i18n="mm_2">Voluntarios y Capacitación</span>
+                <span class="mindmap-node" data-i18n="mm_3">Consultantes</span>
+              </div>
+            </div>
             <a class="text-link" href="#contact" data-i18n="ask_quote">Consultar por correo →</a>
           </article>
+        </div>
+
+        <div class="site-examples">
+          <h3 data-i18n="web_sec_title">Sitios web</h3>
+          <p class="site-examples-sub" data-i18n="web_sec_sub">
+            Ejemplos de sitios publicados diseñados y desarrollados según cada proyecto:
+          </p>
+
+          <div class="example-list">
+            <div class="example-box">
+              <p data-i18n="ex1_desc">
+                <strong>Ejemplo 1:</strong> Sitio web para coaching personalizado de idiomas, en portugués brasileño.
+              </p>
+              <div>
+                <a href="https://youfirstidiomas.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" data-i18n="ex1_btn">
+                  Ejemplo 1: Coaching de idiomas (PT-BR)
+                </a>
+              </div>
+            </div>
+
+            <div class="example-box">
+              <p data-i18n="ex2_desc">
+                <strong>Ejemplo 2:</strong> Sitio web de fotógrafo Hamdy Abu Sido (inglés, español, portugués y árabe).
+              </p>
+              <div>
+                <a href="https://mutualaid-cloud.github.io/hamdy/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" data-i18n="ex2_btn">
+                  Ejemplo 2: Fotógrafo Hamdy Abu Sido
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -567,8 +633,9 @@
             Cuéntame qué necesita tu negocio, tu equipo o tu organización. Respondo personalmente y armamos una propuesta clara y a medida.
           </p>
           <a href="mailto:lau_chasampi@yahoo.com.ar" class="email-highlight">lau_chasampi@yahoo.com.ar</a>
-          <div>
+          <div class="cta-buttons">
             <a href="mailto:lau_chasampi@yahoo.com.ar?subject=Consulta%20%2F%20Presupuesto" class="btn btn-primary" data-i18n="ct_btn">Enviar correo para presupuesto</a>
+            <a href="https://wa.me/5511976905094" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="ct_wa">WhatsApp (+55 11 97690 5094)</a>
           </div>
         </div>
       </div>
@@ -585,11 +652,6 @@
     const translations = {
       es: {
         page_title: "Laura Chasampi | Sistemas, Web y EdTech",
-        nav_biz: "Negocios y Pymes",
-        nav_hire: "Empresas y Roles",
-        nav_web: "Sitios Web",
-        nav_proj: "Proyectos",
-        nav_contact: "Contacto",
         hero_eyebrow: "Sistemas · Web · EdTech · Idiomas",
         hero_title: "Tecnología con sentido humano y orden real.",
         hero_lead: "Diseño sitios web, aplicaciones a medida y sistemas de organización tanto para emprendedores y pequeñas empresas que necesitan resolver su día a día como para equipos y organizaciones que buscan arquitectura técnica, automatización y herramientas educativas.",
@@ -597,7 +659,7 @@
         cta_hire: "Busco perfil técnico / rol",
         biz_tag: "Para emprendedores y pequeñas / medianas empresas",
         biz_title: "Tu negocio ordenado y visible, sin enredos técnicos",
-        biz_sub: "Si estás arrancando o sientes que tu gestión diaria se escapa entre mensajes, planillas sueltas y tareas repetitivas, no necesitas saber de programación. Yo escucho cómo trabaja tu equipo, armo lo que de verdad te sirve y te acompaño con trato cercano, excelencia y precio justo.",
+        biz_sub: "Si estás arrancando o sientes que tu gestión diaria se escapa entre mensajes, planillas sueltas y tareas repetitivas, tengo la solución. Yo escucho cómo trabaja tu equipo, armo lo que de verdad te sirve y te acompaño con trato cercano, excelencia y precio justo.",
         biz_c1_title: "Sitio web para mostrar tu trabajo afuera",
         biz_c1_desc: "Una página clara, rápida y adaptable a celulares para que tus clientes entiendan qué haces, confíen en tu proyecto y te contacten sin vueltas.",
         biz_c2_title: "Herramientas internas para ordenar tu rutina",
@@ -619,36 +681,36 @@
         hire_c2_desc: "Creación de interfaces interactivas, plataformas educativas y entrenadores prácticos orientados a la adquisición real de idiomas.",
         hire_c3_title: "Tercer Sector e Idiomas",
         hire_c3_desc: "Sistemas humanos para ONGs (donantes, voluntarios, capacitaciones y consultantes) y evaluación lingüística o flujos multilingües.",
-        web_tag: "Presencia digital",
-        web_title: "Sitios web que he creado",
-        web_sub: "Sitios publicados diseñados y construidos para proyectos reales.",
-        w1_desc: "Sitio web de mi espacio de enseñanza y coaching de idiomas con metodología propia y recursos pensados para el aprendizaje práctico.",
-        w2_desc: "Sitio web desarrollado para iniciativa comunitaria y de apoyo mutuo en línea.",
-        visit_site: "Visitar sitio web →",
         proj_tag: "Muestras reales",
-        proj_title: "Proyectos y herramientas construidas",
+        proj_title: "Sitios web, herramientas y estructuras",
         proj_sub: "Ejemplos prácticos de cómo convierto necesidades concretas en herramientas funcionales.",
         p1_desc: "Aplicación web interactiva para práctica oral y vocabulario de mandarín (HSK 1 y HSK 2).",
         open_proj: "Abrir proyecto →",
         p2_title: "Gestión de Alumnos y Clases",
         p2_desc: "Sistema de gestión estudiantil y widgets interactivos de práctica (como Present Continuous y pronunciación/minimal pairs).",
         view_gh: "Ver en GitHub →",
-        p3_title: "Sistemas para ONGs y Pymes",
-        p3_desc: "Arquitectura de herramientas para donantes, capacitación de voluntarios, atención a consultantes y orden operativo cotidiano.",
+        p3_title: "Estructuras para ONGs",
+        p3_desc: "Arquitectura de sistemas con sensibilidad humana para organizar procesos sin exponer datos sensibles.",
+        mm_root: "Mapa de estructura (ejemplo)",
+        mm_1: "Donantes",
+        mm_2: "Voluntarios y Capacitación",
+        mm_3: "Consultantes",
         ask_quote: "Consultar por correo →",
+        web_sec_title: "Sitios web",
+        web_sec_sub: "Ejemplos de sitios publicados diseñados y desarrollados según cada proyecto:",
+        ex1_desc: "<strong>Ejemplo 1:</strong> Sitio web para coaching personalizado de idiomas, en portugués brasileño.",
+        ex1_btn: "Ejemplo 1: Coaching de idiomas (PT-BR)",
+        ex2_desc: "<strong>Ejemplo 2:</strong> Sitio web de fotógrafo Hamdy Abu Sido (inglés, español, portugués y árabe).",
+        ex2_btn: "Ejemplo 2: Fotógrafo Hamdy Abu Sido",
         ct_tag: "Contacto directo",
         ct_title: "Pide tu presupuesto o conversamos sobre tu proyecto",
         ct_desc: "Cuéntame qué necesita tu negocio, tu equipo o tu organización. Respondo personalmente y armamos una propuesta clara y a medida.",
         ct_btn: "Enviar correo para presupuesto",
+        ct_wa: "WhatsApp (+55 11 97690 5094)",
         footer_txt: "Laura Chasampi · Portafolio y Soluciones Digitales · lau_chasampi@yahoo.com.ar"
       },
       pt: {
         page_title: "Laura Chasampi | Sistemas, Web e EdTech",
-        nav_biz: "Negócios e PMEs",
-        nav_hire: "Empresas e Vagas",
-        nav_web: "Sites",
-        nav_proj: "Projetos",
-        nav_contact: "Contato",
         hero_eyebrow: "Sistemas · Web · EdTech · Idiomas",
         hero_title: "Tecnologia com foco humano e organização de verdade.",
         hero_lead: "Crio sites, aplicativos sob medida e sistemas de organização tanto para empreendedores e pequenas empresas que precisam resolver o dia a dia quanto para equipes e organizações que buscam arquitetura de sistemas, automação e ferramentas educativas.",
@@ -656,7 +718,7 @@
         cta_hire: "Busco perfil técnico / vaga",
         biz_tag: "Para empreendedores e pequenas / médias empresas",
         biz_title: "Seu negócio organizado e visível, sem complicação técnica",
-        biz_sub: "Se você está começando ou sente que a gestão diária está se perdendo entre mensagens, planilhas soltas e tarefas repetitivas, não precisa saber programar. Eu ouço como a sua equipe trabalha, construo o que faz sentido e entrego excelência com preço justo.",
+        biz_sub: "Se você está começando ou sente que a gestão diária está se perdendo entre mensagens, planilhas soltas e tarefas repetitivas, eu tenho a solução. Eu ouço como a sua equipe trabalha, construo o que faz sentido e entrego excelência com preço justo.",
         biz_c1_title: "Site para apresentar o seu trabalho lá fora",
         biz_c1_desc: "Uma página clara, rápida e adaptada ao celular para que seus clientes entendam o que você faz, confiem na marca e entrem em contato facilmente.",
         biz_c2_title: "Ferramentas internas para organizar a rotina",
@@ -668,7 +730,7 @@
         gloss_title: "Termos sem mistério (caso apareçam por aí)",
         gloss_1: "<strong>Site / App sob medida:</strong> Uma página ou aplicativo feito para o jeito real do seu negócio funcionar, e não um modelo engessado que força você a se adaptar.",
         gloss_2: "<strong>Sistema interno:</strong> Os bastidores da sua empresa: onde clientes, horários, equipe ou atendimentos ficam organizados sem perder informações.",
-        gloss_3: "<strong>Automação:</strong> Fazer com que tarefas repetitivas (como registrar dados, organizar listas ou enviar avisos) aconteçam de forma automática e confiável.",
+        gloss_3: "<strong>Automação:</strong> Fazer que tarefas repetitivas (como registrar dados, organizar listas ou enviar avisos) aconteçam de forma automática e confiável.",
         hire_tag: "Para empresas, startups, EdTech e ONGs",
         hire_title: "Arquitetura de sistemas, automação e design educacional",
         hire_sub: "Disponível para colaborações flexíveis (20–30h/semana) ou projetos por contrato unindo desenvolvimento web, automação de fluxos, sensibilidade humana e fluência multilíngue (PT / ES / EN, além de mandarim e italiano básicos).",
@@ -678,36 +740,36 @@
         hire_c2_desc: "Criação de interfaces interativas, plataformas educacionais e ferramentas práticas voltadas à aquisição real de idiomas.",
         hire_c3_title: "Terceiro Setor e Idiomas",
         hire_c3_desc: "Sistemas humanos para ONGs (doadores, voluntários, capacitações e consulentes) e avaliação linguística ou fluxos multilíngues.",
-        web_tag: "Presença digital",
-        web_title: "Sites que criei",
-        web_sub: "Sites publicados projetados e construídos para projetos reais.",
-        w1_desc: "Site do meu espaço de ensino e coaching de idiomas com metodologia própria e recursos voltados ao aprendizado prático.",
-        w2_desc: "Site desenvolvido para iniciativa comunitária e de apoio mútuo online.",
-        visit_site: "Visitar site →",
         proj_tag: "Exemplos reais",
-        proj_title: "Projetos e ferramentas criadas",
+        proj_title: "Sites, ferramentas e estruturas",
         proj_sub: "Exemplos práticos de como transformo necessidades reais em ferramentas funcionais.",
         p1_desc: "Aplicação web interativa para prática oral e vocabulário de mandarim (HSK 1 e HSK 2).",
         open_proj: "Abrir projeto →",
         p2_title: "Gestão de Alunos e Aulas",
         p2_desc: "Sistema de gestão de alunos e widgets interativos de prática (como Present Continuous e pronúncia/minimal pairs).",
         view_gh: "Ver no GitHub →",
-        p3_title: "Sistemas para ONGs e PMEs",
-        p3_desc: "Arquitetura de ferramentas para doadores, capacitação de voluntários, atendimento a consulentes e organização operacional.",
+        p3_title: "Estruturas para ONGs",
+        p3_desc: "Arquitetura de sistemas com sensibilidade humana para organizar processos sem expor dados sensíveis.",
+        mm_root: "Mapa de estrutura (exemplo)",
+        mm_1: "Doadores",
+        mm_2: "Voluntários e Capacitação",
+        mm_3: "Consulentes",
         ask_quote: "Pedir orçamento por e-mail →",
+        web_sec_title: "Sites",
+        web_sec_sub: "Exemplos de sites publicados projetados e desenvolvidos para cada projeto:",
+        ex1_desc: "<strong>Exemplo 1:</strong> Site para coaching personalizado de idiomas, em português brasileiro.",
+        ex1_btn: "Exemplo 1: Coaching de idiomas (PT-BR)",
+        ex2_desc: "<strong>Exemplo 2:</strong> Site do fotógrafo Hamdy Abu Sido (inglês, espanhol, português e árabe).",
+        ex2_btn: "Exemplo 2: Fotógrafo Hamdy Abu Sido",
         ct_tag: "Contato direto",
         ct_title: "Peça seu orçamento ou vamos conversar sobre o seu projeto",
         ct_desc: "Conte o que o seu negócio, equipe ou organização precisa. Respondo pessoalmente e montamos uma proposta clara e sob medida.",
         ct_btn: "Enviar e-mail para orçamento",
+        ct_wa: "WhatsApp (+55 11 97690 5094)",
         footer_txt: "Laura Chasampi · Portfólio e Soluções Digitais · lau_chasampi@yahoo.com.ar"
       },
       en: {
         page_title: "Laura Chasampi | Systems, Web & EdTech",
-        nav_biz: "Small Businesses",
-        nav_hire: "Hiring & Roles",
-        nav_web: "Websites",
-        nav_proj: "Projects",
-        nav_contact: "Contact",
         hero_eyebrow: "Systems · Web · EdTech · Languages",
         hero_title: "Human-centered technology and real operational clarity.",
         hero_lead: "I design websites, custom apps, and organizational systems both for founders and small businesses solving day-to-day operations and for teams or organizations seeking systems architecture, workflow automation, and learning tools.",
@@ -715,7 +777,7 @@
         cta_hire: "Looking for technical / role",
         biz_tag: "For founders and small / medium businesses",
         biz_title: "Your business organized and visible, without tech headaches",
-        biz_sub: "If you are just starting out or feel daily operations slipping across chats, scattered spreadsheets, and repetitive tasks, you don't need technical jargon. I listen to how your team works, build what actually helps, and deliver strong results at a fair price.",
+        biz_sub: "If you are just starting out or feel daily operations slipping across chats, scattered spreadsheets, and repetitive tasks, I have the solution. I listen to how your team works, build what actually helps, and deliver strong results at a fair price.",
         biz_c1_title: "A clear website to showcase your work",
         biz_c1_desc: "A fast, mobile-friendly site that helps customers understand what you do, trust your work, and reach out easily.",
         biz_c2_title: "Internal tools to organize daily routines",
@@ -737,27 +799,32 @@
         hire_c2_desc: "Building interactive web interfaces, educational tools, and practical trainers designed for real language acquisition.",
         hire_c3_title: "Non-Profits & Languages",
         hire_c3_desc: "Human-centered systems for NGOs (donors, volunteers, trainings, and beneficiaries/consultants) plus multilingual workflows and evaluation.",
-        web_tag: "Web presence",
-        web_title: "Websites I have built",
-        web_sub: "Published websites designed and built for real projects.",
-        w1_desc: "Website for my language teaching and coaching practice featuring original methodology and practical learning resources.",
-        w2_desc: "Website built for an online mutual aid and community support initiative.",
-        visit_site: "Visit website →",
         proj_tag: "Selected work",
-        proj_title: "Projects & built tools",
+        proj_title: "Websites, tools & structures",
         proj_sub: "Practical examples of turning real needs into working software.",
         p1_desc: "Interactive web app for speaking practice and Mandarin Chinese vocabulary (HSK 1 and HSK 2).",
         open_proj: "Open project →",
         p2_title: "Student & Class Management",
         p2_desc: "Student management system and interactive practice widgets (such as Present Continuous and pronunciation/minimal pairs).",
         view_gh: "View on GitHub →",
-        p3_title: "NGO & Small Business Systems",
-        p3_desc: "System architecture for donors, volunteer training, beneficiary/consultant support, and everyday operational structure.",
+        p3_title: "NGO System Structures",
+        p3_desc: "Human-centered system architecture to organize workflows while keeping sensitive data protected.",
+        mm_root: "Structure map (sample)",
+        mm_1: "Donors",
+        mm_2: "Volunteers & Training",
+        mm_3: "Beneficiaries / Consultants",
         ask_quote: "Request quote by email →",
+        web_sec_title: "Websites",
+        web_sec_sub: "Examples of published websites designed and built for each project:",
+        ex1_desc: "<strong>Example 1:</strong> Website for personalized language coaching, in Brazilian Portuguese.",
+        ex1_btn: "Example 1: Language coaching (PT-BR)",
+        ex2_desc: "<strong>Example 2:</strong> Photographer Hamdy Abu Sido website (English, Spanish, Portuguese, and Arabic).",
+        ex2_btn: "Example 2: Photographer Hamdy Abu Sido",
         ct_tag: "Direct contact",
         ct_title: "Request a quote or talk about your project",
         ct_desc: "Tell me what your business, team, or organization needs. I reply personally and put together a clear, tailored proposal.",
         ct_btn: "Email for a quote",
+        ct_wa: "WhatsApp (+55 11 97690 5094)",
         footer_txt: "Laura Chasampi · Portfolio & Digital Solutions · lau_chasampi@yahoo.com.ar"
       }
     };
